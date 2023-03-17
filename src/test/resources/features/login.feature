@@ -25,6 +25,11 @@ Feature: Xfleet login feature
     And user clicks on the login button
     Then user should see the Quick Launchpad
 
+  @XFLEET10-468
+  Scenario: User land on the ‘Forgot Password’ page after clicking on the "Forgot your password?" link
+    When user clicks on the Forgot your password? link
+    Then she or he lands on "Forgot Password" page
+
 
 
 
