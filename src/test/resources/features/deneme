@@ -1,26 +1,8 @@
-Scenario Outline: The system shouldn't allow users to login to application without providing valid credentials
-    When user enters wrongUsername "<wrongUsername>"
-    And user enters wrongPassword "<wrongPassword>"
-    And user clicks on the login button
-    Then invalid username or password. error message should be displayed for invalid credentials
 
-    Examples:
-      | wrongPassword | wrongUsername |
-      | ssdasdfgf     | asdfsdafdsfg  |
 
-  Scenario: user land on the Forgot Password page after clicking on the Forgot your password? link
-    When user clicks on the forgot your password link
-    Then user lands on the forgot password page
 
-  Scenario: user can see "Remember me on this computer" link on the login page and it should be clickable
-    When user can see Remember me on this computer link
-    Then link should be clickable
 
-  Scenario: user can use enter key on the login page to login
-    When user enters truck  "<username>"
-    And user enters truck "<password>"
-    And user presses the enter key
-    Then user should login
+
 
 /////////////////////////
 
@@ -38,41 +20,14 @@ Scenario Outline: The system shouldn't allow users to login to application witho
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("user clicks on the forgot your password link")
-    public void user_clicks_on_the_forgot_your_password_link() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("user lands on the forgot password page")
-    public void user_lands_on_the_forgot_password_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-
-    @When("user can see Remember me on this computer link")
-    public void user_can_see_remember_me_on_this_computer_link() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Then("link should be clickable")
-    public void link_should_be_clickable() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
 
 
 
-    @When("user enters wrongUsername  {string}")
-    public void user_enters_wrongUsername(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @When("user enters wrongPassword {string}")
-    public void user_enters_wrongPassword(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+
+
+
+
+
     @When("user presses the enter key")
     public void user_presses_the_enter_key() {
         // Write code here that turns the phrase above into concrete actions
