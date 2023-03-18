@@ -117,6 +117,7 @@ public class loginStepDefinitions {
 
     @When("user can see Remember me on this computer link")
     public void user_can_see_remember_me_on_this_computer_link() {
+          //dfgdsfgdfsg
             Assert.assertTrue(loginPage.rememberMeText.isDisplayed());
     }
     @Then("remember me link should be clickable")
