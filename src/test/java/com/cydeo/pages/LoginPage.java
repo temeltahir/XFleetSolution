@@ -25,6 +25,9 @@ public class LoginPage {
     @FindBy(id = "remember_me")
     public WebElement rememberMeBox;
 
+    @FindBy(className = "custom-checkbox__text")
+    public WebElement getRememberMeText;
+
     @FindBy(xpath = "//span[@class='custom-checkbox__text']")
     public WebElement rememberMeText;
 

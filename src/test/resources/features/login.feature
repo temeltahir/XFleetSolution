@@ -3,6 +3,7 @@ Feature: Xfleet login feature
   Background:
     Given user is on the xfleet login page
 
+    @smoke
   Scenario: Login as sales manager
     When user enters sales manager username
     And user enters sales manager password
@@ -25,11 +26,27 @@ Feature: Xfleet login feature
     And user clicks on the login button
     Then user should see the Quick Launchpad
 
-  @XFLEET10-468
-  Scenario: User land on the ‘Forgot Password’ page after clicking on the "Forgot your password?" link
-    When user clicks on the Forgot your password? link
-    Then she or he lands on "Forgot Password" page
+  Scenario Outline: The system shouldn't allow users to login to application without providing valid credentials
+    When user enters wrongUsername "<wrongUsername>" and wrongPassword "<wrongPassword>"
+    And user clicks on the login button
+    Then invalid username or password error message should be displayed for invalid credentials
 
+    Examples:
+      | wrongPassword | wrongUsername |
+      | ssdasdfgf     | asdfsdafdsfg  |
+
+
+  Scenario: user land on the Forgot Password page after clicking on the Forgot your password? link
+    When user clicks on the forgot your password link
+    Then user lands on the forgot password page
+
+  Scenario: user can see "Remember me on this computer" link on the login page and it should be clickable
+    When user can see Remember me on this computer link
+    Then remember me link should be clickable
+
+  Scenario: user can use enter key on the login page to login
+    When user enters truck "<username>" and "<password>" and presses the enter key
+    Then user should login
 
 
 
